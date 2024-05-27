@@ -29,9 +29,16 @@
     NSLog(@"dealloc");
 }
 
+- (NSString*) saySomeString
+{
+    return [NSString stringWithFormat: @"Текущая дата и время: %@", [NSDate date]];
+}
+
 - (NSString*) sayString
 {
-    return  @"Hello";
+    NSString* string = [self saySomeString];
+    
+    return string;
 }
 
 @end
