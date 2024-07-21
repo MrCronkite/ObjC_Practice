@@ -1,6 +1,6 @@
 
 
-#import "Apps.h"
+#import "MainClass.h"
 
 @implementation MainClass
 

@@ -14,7 +14,9 @@
 		84591B2B2BFCDC9C00E46C37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84591B2A2BFCDC9C00E46C37 /* Assets.xcassets */; };
 		84591B2E2BFCDC9C00E46C37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84591B2C2BFCDC9C00E46C37 /* LaunchScreen.storyboard */; };
 		84591B312BFCDC9C00E46C37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84591B302BFCDC9C00E46C37 /* main.m */; };
-		84591B392BFE68D400E46C37 /* Apps.m in Sources */ = {isa = PBXBuildFile; fileRef = 84591B382BFE68D400E46C37 /* Apps.m */; };
+		84591B392BFE68D400E46C37 /* MainClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 84591B382BFE68D400E46C37 /* MainClass.m */; };
+		849AA9242C4D8F3A005DF88C /* Child.m in Sources */ = {isa = PBXBuildFile; fileRef = 849AA9232C4D8F3A005DF88C /* Child.m */; };
+		849AA92D2C4D96F6005DF88C /* ModerChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AA92C2C4D96F6005DF88C /* ModerChild.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +32,12 @@
 		84591B2D2BFCDC9C00E46C37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84591B2F2BFCDC9C00E46C37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84591B302BFCDC9C00E46C37 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		84591B382BFE68D400E46C37 /* Apps.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Apps.m; sourceTree = "<group>"; };
-		84591B3A2BFE68F200E46C37 /* Apps.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Apps.h; sourceTree = "<group>"; };
+		84591B382BFE68D400E46C37 /* MainClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainClass.m; sourceTree = "<group>"; };
+		84591B3A2BFE68F200E46C37 /* MainClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainClass.h; sourceTree = "<group>"; };
+		849AA9232C4D8F3A005DF88C /* Child.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Child.m; sourceTree = "<group>"; };
+		849AA9252C4D8F4C005DF88C /* Child.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Child.h; sourceTree = "<group>"; };
+		849AA92B2C4D96F6005DF88C /* testObjc-C-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "testObjc-C-Bridging-Header.h"; sourceTree = "<group>"; };
+		849AA92C2C4D96F6005DF88C /* ModerChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModerChild.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +89,12 @@
 		84591B372BFE68A500E46C37 /* Behavior */ = {
 			isa = PBXGroup;
 			children = (
-				84591B382BFE68D400E46C37 /* Apps.m */,
-				84591B3A2BFE68F200E46C37 /* Apps.h */,
+				84591B382BFE68D400E46C37 /* MainClass.m */,
+				84591B3A2BFE68F200E46C37 /* MainClass.h */,
+				849AA9232C4D8F3A005DF88C /* Child.m */,
+				849AA9252C4D8F4C005DF88C /* Child.h */,
+				849AA92C2C4D96F6005DF88C /* ModerChild.swift */,
+				849AA92B2C4D96F6005DF88C /* testObjc-C-Bridging-Header.h */,
 			);
 			path = Behavior;
 			sourceTree = "<group>";
@@ -120,6 +130,7 @@
 				TargetAttributes = {
 					84591B1A2BFCDC9B00E46C37 = {
 						CreatedOnToolsVersion = 15.1;
+						LastSwiftMigration = 1510;
 					};
 				};
 			};
@@ -159,7 +170,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84591B392BFE68D400E46C37 /* Apps.m in Sources */,
+				849AA9242C4D8F3A005DF88C /* Child.m in Sources */,
+				84591B392BFE68D400E46C37 /* MainClass.m in Sources */,
+				849AA92D2C4D96F6005DF88C /* ModerChild.swift in Sources */,
 				84591B262BFCDC9B00E46C37 /* ViewController.m in Sources */,
 				84591B202BFCDC9B00E46C37 /* AppDelegate.m in Sources */,
 				84591B312BFCDC9C00E46C37 /* main.m in Sources */,
@@ -310,6 +323,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LUQ926BAHR;
@@ -328,6 +342,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "-2.testObjc-C";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "testObjc-C/Behavior/testObjc-C-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -337,6 +354,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LUQ926BAHR;
@@ -355,6 +373,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "-2.testObjc-C";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "testObjc-C/Behavior/testObjc-C-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

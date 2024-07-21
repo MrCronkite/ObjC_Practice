@@ -1,7 +1,8 @@
 
 
 #import "ViewController.h"
-#import "Apps.h"
+#import "Child.h"
+#import "testObjc_C-Swift.h"
 
 @interface ViewController ()
 
@@ -14,14 +15,16 @@
     
     self.view.backgroundColor = [UIColor redColor];
     
-    MainClass *mainClassInstance = [[MainClass alloc] init];
-    [mainClassInstance sayHello];
-    [mainClassInstance say:@"How are you"];
-    [mainClassInstance say:@"i am" and:@"vlad"];
+    Child *childClassInstance = [[Child alloc] init];
+    [childClassInstance sayHello];
+    [childClassInstance say:@"How are you"];
+    [childClassInstance say:@"i am" and:@"vlad"];
     
-    NSLog(@"%@", [mainClassInstance sayString]);
+    NSLog(@"%@", [childClassInstance sayString]);
+    ModerChild *modernChildInstance = [[ModerChild alloc] init];
+    NSLog(@"%@", [modernChildInstance sayString]);
     
-    [MainClass whoAreYou];
+    [Child whoAreYou];
 }
 
 @end
