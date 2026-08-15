@@ -7,12 +7,15 @@
 
 // CountryDetailViewController.m
 #import "CountryDetailViewController.h"
+#import <MapKit/MapKit.h>
+#import "CountryAnnotation.h"
 
 @interface CountryDetailViewController ()
 
 @property (nonatomic, strong) Country *country;
 @property (nonatomic, strong) UIImageView *flagImageView;
 @property (nonatomic, strong) UILabel *infoLabel;
+@property (nonatomic, strong) MKMapView *mapView;
 
 @end
 
@@ -33,7 +36,36 @@
 
     [self setupFlagImageView];
     [self setupInfoLabel];
+    [self setupMapView];      // ← добавили
     [self loadFlagImage];
+}
+
+- (void)setupMapView {
+    if (!self.country.hasValidCoordinate) return;
+
+    self.mapView = [[MKMapView alloc] init];
+    self.mapView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.mapView.layer.cornerRadius = 8;
+    self.mapView.clipsToBounds = YES;
+    [self.view addSubview:self.mapView];
+
+    [NSLayoutConstraint activateConstraints:@[
+        [self.mapView.topAnchor constraintEqualToAnchor:self.infoLabel.bottomAnchor constant:20],
+        [self.mapView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:16],
+        [self.mapView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-16],
+        [self.mapView.heightAnchor constraintEqualToConstant:220],
+        [self.mapView.bottomAnchor constraintLessThanOrEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor constant:-16],
+    ]];
+
+    CLLocationCoordinate2D coordinate = self.country.coordinate;
+    MKCoordinateSpan span = MKCoordinateSpanMake(20, 20);
+    MKCoordinateRegion region = MKCoordinateRegionMake(coordinate, span);
+    [self.mapView setRegion:region animated:NO];
+
+    CountryAnnotation *annotation = [[CountryAnnotation alloc] initWithCoordinate:coordinate
+                                                                              title:self.country.commonName
+                                                                           subtitle:self.country.capital];
+    [self.mapView addAnnotation:annotation];
 }
 
 - (void)setupFlagImageView {

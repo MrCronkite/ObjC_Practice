@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		84C620C4302F956B0094B4C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C620C3302F956B0094B4C2 /* main.m */; };
+		84C6214C3030E3420094B4C2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C6214A3030E33C0094B4C2 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		84C62091302F8F730094B4C2 /* Country.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Country.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C620C3302F956B0094B4C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Country/main.m; sourceTree = "<group>"; };
+		84C6214A3030E33C0094B4C2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -41,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84C6214C3030E3420094B4C2 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +55,7 @@
 			children = (
 				84C620C3302F956B0094B4C2 /* main.m */,
 				84C62093302F8F730094B4C2 /* Country */,
+				84C621493030E33B0094B4C2 /* Frameworks */,
 				84C62092302F8F730094B4C2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,6 +66,14 @@
 				84C62091302F8F730094B4C2 /* Country.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		84C621493030E33B0094B4C2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84C6214A3030E33C0094B4C2 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

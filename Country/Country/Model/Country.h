@@ -7,6 +7,7 @@
 
 // Country.h
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -28,6 +29,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) double areaKm2;
 @property (nonatomic, assign) BOOL landlocked;
 
+@property (nonatomic, assign) CLLocationCoordinate2D coordinate;
+@property (nonatomic, assign) BOOL hasValidCoordinate;
+
 @property (nonatomic, copy, nullable) NSString *flagEmoji;
 @property (nonatomic, copy, nullable) NSString *flagPngURL;
 @property (nonatomic, copy, nullable) NSString *flagSvgURL;
@@ -41,8 +45,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, nullable) NSArray<NSString *> *tlds;
 
 @property (nonatomic, copy, nullable) NSString *governmentType;
-
-// leaders: массив словарей вида {"name": ..., "title": ...}
 @property (nonatomic, copy, nullable) NSArray<NSDictionary<NSString *, NSString *> *> *leaders;
 
 @property (nonatomic, copy, nullable) NSString *wikipediaURL;

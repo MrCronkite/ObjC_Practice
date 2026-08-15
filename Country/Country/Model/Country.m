@@ -35,6 +35,17 @@
         // population / area / landlocked
         self.population = [dict[@"population"] integerValue];
 
+        // coordinates
+        NSDictionary *coordinatesDict = dict[@"coordinates"];
+        if (coordinatesDict && coordinatesDict[@"lat"] && coordinatesDict[@"lng"]) {
+            double lat = [coordinatesDict[@"lat"] doubleValue];
+            double lng = [coordinatesDict[@"lng"] doubleValue];
+            self.coordinate = CLLocationCoordinate2DMake(lat, lng);
+            self.hasValidCoordinate = YES;
+        } else {
+            self.hasValidCoordinate = NO;
+        }
+
         NSDictionary *area = dict[@"area"];
         self.areaKm2 = [area[@"kilometers"] doubleValue];
 
